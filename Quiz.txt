@@ -1,0 +1,129 @@
+Coursera: DL Specialization
+	Course: Introduction to DL
+		Week: 1
+			Quiz: 1
+			1. Similar to electricity starting about 100 years ago, AI is transforming multiple industries
+			2. We have access to a lot more data.
+				Deep learning has resulted in significant improvements in important applications such as online advertising, speech recognition, and image recognition.
+				We have access to a lot more computational power.
+			3. Being able to try out ideas quickly allows deep learning engineers to iterate more quickly.
+				Faster computation can help speed up how long a team takes to iterate to a good idea.
+				Recent progress in deep learning algorithms has allowed us to train good models faster (even without changing the CPU/GPU hardware).
+			4. True - wrong; False
+			5. Figure 3
+			6. False
+			7. False
+			8. It is applicable when the input/output is a sequence (e.g., a sequence of words).
+				It can be trained as a supervised learning problem.
+			9. x-axis is the amount of data
+				y-axis (vertical axis) is the performance of the algorithm.
+			10. Increasing the size of a neural network generally does not hurt an algorithm’s performance, and it may help significantly.
+				Increasing the training set size generally does not hurt an algorithm’s performance, and it may help significantly.
+				
+		Week: 2
+			Quiz: 1
+			1. A neuron computes a linear function (z = Wx + b) followed by an activation function
+			2. -ylog(y) + (1-y)log(1-y)
+			3. x = img.reshape((32*32*3,1))
+			4. c.shape = (2, 3)
+			5. The computation cannot happen because the sizes don't match. It's going to be "Error"!
+			6. (nx, m)
+			7. (12288, 45)
+			8. c = a + b.T
+			9. This will invoke broadcasting, so b is copied three times to become (3,3), and *∗ is an element-wise product so c.shape will be (3, 3)
+			10. (a - 1) * (b + c)
+			
+		Week: 3
+			Quiz: 1
+			1. a4<subscript>[2] is the activation output by the 4th neuron of the 2nd layer
+				a[2] denotes the activation vector of the 2nd layer.
+			 	a[2](12) denotes the activation vector of the 2nd layer for the 12th training example.
+				XX is a matrix in which each column is one training example.
+			2. True
+			3. Z[l] = W[l]A[l-1] + b[l]
+				A[l] = g[l](Z[l])
+			4. Sigmoid
+			5. (4, 1)
+			6. Each neuron in the first hidden layer will perform the same computation. So even after multiple iterations of gradient descent each neuron in the layer will be computing the same thing as other neurons.
+			7. True: Wrong - Logistic Regression does not have a hidden layer; False
+			8. This will cause the inputs of the tanh to also be very large, thus causing gradients to be close to zero. The optimization algorithm will thus become slow.
+			9. b[1].shape = (4, 1)
+				W[1].shape = (4, 2)
+				W[2].shape = (1, 4)
+				b[2].shape = (1, 1)
+			10. Z[1].shape = A[1].shape = (4, m)
+			
+		Week: 4
+			Quiz: 1
+			1. We use it to pass variables computed during forward propagation to the corresponding backward propagation step. It contains useful values for backward propagation to compute derivatives.
+			2. number of iterations
+				learning rate \alphaα
+				size of the hidden layers n^{[l]}n[l]
+				number of layers LL in the neural network
+			3. The deeper layers of a neural network are typically computing more complex features of the input than the earlier layers.
+			4. False
+			5. for(i in range(1, len(layer_dims))):
+  				parameter[‘W’ + str(i)] = np.random.randn(layers[i], layers[i-1])) * 0.01
+  				parameter[‘b’ + str(i)] = np.random.randn(layers[i], 1) * 0.01
+  			6. The number of layers LL is 4. The number of hidden layers is 3.
+  			7. True
+  			8. True
+  			9. 	W[1].shape = (4, 4)
+  				b[1].shape = (4, 1)
+  				W[2].shape = (3, 4)
+  				b[2].shape = (3, 1)
+  				W[3].shape = (1, 3)
+  				b[3].shape = (1, 1)
+  			10. W[l[.shape = (n[l], n[l-1])
+  			
+  	Course: Improving DNN
+  		Week: 1
+  			Quiz: 1
+  			1. 98% train . 1% dev . 1% test
+  			2. Come from the same distribution
+  			3. Increase the number of units in each hidden layer
+				Make the Neural Network deeper
+			4. Increase the regularization parameter lambda
+				Get more training data
+			5. A regularization technique (such as L2 regularization) that results in gradient descent shrinking the weights on every iteration.
+			6. Weights are pushed toward becoming smaller (closer to 0)
+			7. You do not apply dropout (do not randomly eliminate units) and do not keep the 1/keep_prob factor in the calculations used in training
+			8. Reducing the regularization effect
+				Causing the neural network to end up with a lower training set error
+			9. Data augmentation
+				Dropout
+				L2 regularization
+			10. It makes the cost function faster to optimize
+			
+		Week: 2
+			Quiz: 1
+			1. a[3]{8}(7)
+			2. One iteration of mini-batch gradient descent (computing on a single mini-batch) is faster than one iteration of batch gradient descent.
+			3. If the mini-batch size is 1, you lose the benefits of vectorization across examples in the mini-batch.
+				If the mini-batch size is m, you end up with batch gradient descent, which has to process the whole training set before making progress.
+			4. If you’re using mini-batch gradient descent, this looks acceptable. But if you’re using batch gradient descent, something is wrong.
+			5. v2 = 7.5, vcorrected2 = 10
+			6. alpha = exp(t) * alpha0
+			7. Increasing \betaβ will shift the red line slightly to the right.
+				Decreasing \betaβ will create more oscillation within the red line.
+			8. (1) is gradient descent. (2) is gradient descent with momentum (small \betaβ). (3) is gradient descent with momentum (large \betaβ)
+			9. Try mini-batch gradient descent
+				Try using Adam
+				Try better random initialization for the weights
+				Try tuning the learning rate \alphaα
+			10. Adam should be used with batch gradient computations, not with mini-batches.
+			
+		Week: 3
+			Quiz: 1
+			1. False
+			2. False
+			3. The amount of computational power you can access
+			4. beta = 1-10**(-r - 1)
+			5. False
+			6. z[l]
+			7. To avoid division by zero
+			8. They set the mean and variance of the linear variable z^[l]z [l] of a given layer.
+				They can be learned using Adam, Gradient descent with momentum, or RMSprop, not just with gradient descent.
+			9. Perform the needed normalizations, use \muμ and \sigma^2σ2 estimated using an exponentially weighted average across mini-batches seen during training.
+			10. A programming framework allows you to code up deep learning algorithms with typically fewer lines of code than a lower-level language such as Python.
+				Even if a project is currently open source, good governance of the project helps ensure that the it remains open even in the long term, rather than become closed or modified to benefit only one company.
