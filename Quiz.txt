@@ -127,3 +127,77 @@ Coursera: DL Specialization
 			9. Perform the needed normalizations, use \muμ and \sigma^2σ2 estimated using an exponentially weighted average across mini-batches seen during training.
 			10. A programming framework allows you to code up deep learning algorithms with typically fewer lines of code than a lower-level language such as Python.
 				Even if a project is currently open source, good governance of the project helps ensure that the it remains open even in the long term, rather than become closed or modified to benefit only one company.
+				
+		Week: 4
+			Quiz: 1
+			1. True
+			2. 98%; 9 sec; 9MB
+			3. Accuracy is an optimizing metric; running time and memory size are a satisficing metrics.
+			4. 9.5MM; 250K; 250K
+			5. False
+			6. This would cause the dev and test set distributions to become different. This is a bad idea because you’re not aiming where you want to hit.
+				The test set no longer reflects the distribution of data (security cameras) you most care about.			
+			7. No, because there is insufficient information to tell.
+			8. 0.3% (accuracy of expert #1)
+			9. A learning algorithm’s performance can be better than human-level performance but it can never be better than Bayes error.
+			10. Train a bigger model to try to do better on the training set.
+				Try decreasing regularization.
+			11. You have overfit to the dev set.
+				You should try to get a bigger dev set.
+			12. If the test set is big enough for the 0.05% error estimate to be accurate, this implies Bayes error is ≤0.05
+				It is now harder to measure avoidable bias, thus progress will be slower going forward.
+			13. Rethink the appropriate metric for this task, and ask your team to tune to the new metric.
+			14. Wrong: Try data augmentation/data synthesis to get more images of the new type of bird.
+			15. If 100,000,000 examples is enough to build a good enough Cat detector, you might be better of training with just 10,000,000 examples to gain a \approx≈10x improvement in how quickly you can run experiments, even if each model performs a bit worse because it’s trained on less data.
+				Needing two weeks to train will limit the speed at which you can iterate.
+				Buying faster computers could speed up your teams’ iteration speed and thus your team’s productivity.
+				
+	Course: 3-Structuring ML projects
+		Week: 3
+			Quiz: 1
+			1. Spend a few days training a basic model and see what mistakes it makes.
+				Wrong: Spend a few days checking what is human-level performance for these tasks so that you can get an accurate estimate of Bayes error.
+			2. False
+			3. 500 images on which the algorithm made a mistake
+			4. False
+			5. Choose the training set to be the 900,000 images from the internet along with 
+					80,000 images from your car’s front-facing camera. The 20,000 remaining 
+					images will be split equally in dev and test sets.
+			6. You have a large data-mismatch problem because your model does a lot better on the training-dev set than on the dev set
+				You have a large avoidable-bias problem because your training error is quite a bit higher than the human-level error.
+			7. There’s insufficient information to tell if your friend is right or wrong.
+			8. Wrong: True because it is greater than the other error categories added together (8.0 > 4.1+2.2+1.0).
+				Better answer exists: True because it is the largest category of errors. 
+					As discussed in lecture, we should prioritize the largest category of 
+					error to avoid wasting the team’s time.
+			9. 2.2% would be a reasonable estimate of the maximum amount this windshield wiper could improve performance.
+				Wrong: 2.2% would be a reasonable estimate of how much this windshield wiper 
+					will improve performance.
+			10. So long as the synthesized fog looks realistic to the human eye, you can be confident that the synthesized data is accurately capturing the distribution of real foggy images (or a subset of it), since human vision is very accurate for the problem you’re solving.
+				Wrong: There is little risk of overfitting to the 1,000 pictures of fog so long as you are combing it with a much larger (>>1,000) of clean/non-foggy images.
+			11. You should also correct the incorrectly labeled data in the test set, so that the dev and test sets continue to come from the same distribution
+				You should not correct incorrectly labeled data in the training set as it does not worth the time.
+			12. She should try using weights pre-trained on your dataset, and fine-tuning further with the yellow-light dataset.
+				Wrong: If she has (say) 10,000 images of yellow lights, randomly sample 
+					10,000 images from your dataset and put your and her data together. 
+					This prevents your dataset from “swamping” the yellow lights dataset.
+			13. Neither transfer learning nor multi-task learning seems promising.
+			14. False
+			15. Large training set
+			
+	Course: 4-CNN
+		Week: 1
+			Quiz: 1 - Basics of CNN
+			1. Detect image contrast
+				Wrong: Detect 45 degree edges
+			2. 27,000,100
+			3. 7600
+			4. 29x29x32
+				Wrong: 29x29x16
+			5. 19x19x8
+				Wrong: 17x17x8
+			6. 3
+			7. 16x16x16
+			8. False
+			9. Wrong: It allows a feature detector to be used in multiple locations throughout the whole input image/input volume.
+			10. Each activation in the next layer depends on only a small number of activations from the previous layer.
