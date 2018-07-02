@@ -188,7 +188,7 @@ Coursera: DL Specialization
 	Course: 4-CNN
 		Week: 1
 			Quiz: 1 - Basics of CNN
-			1. Detect image contrast
+			1. Wrong: Detect image contrast
 				Wrong: Detect 45 degree edges
 			2. 27,000,100
 			3. 7600
@@ -199,5 +199,30 @@ Coursera: DL Specialization
 			6. 3
 			7. 16x16x16
 			8. False
-			9. Wrong: It allows a feature detector to be used in multiple locations throughout the whole input image/input volume.
+			9. Wrong: It allows parameters learned for one task to be shared even for a different task (transfer learning).
+				Wrong: It allows a feature detector to be used in multiple locations throughout the whole input image/input volume.
 			10. Each activation in the next layer depends on only a small number of activations from the previous layer.
+			
+		Week: 2
+			Quiz: 1 - Deep CNN Models
+			1. nH and n_W decrease, while n_C increases
+			2. Multiple CONV layers followed by a POOL layer
+				FC layers in the last few layers
+			3. False
+			4. False
+			5. a[l], 0
+			6. Wrong:
+				- Using a skip-connection helps the gradient to backpropagate and thus helps you to train deeper networks
+				The skip-connection makes it easy for the network to learn an identity mapping between the input and the output within the ResNet block.
+				The skip-connections compute a complex non-linear function of the input to pass to a deeper layer in the network.
+			7. Wrong: 2
+				Wrong: 4097
+			8. You can use a pooling layer to reduce n_H, n_W, but not n_C.
+				You can use a 1x1 convolutional layer to reduce n_C but not n_H, n_W.
+			9. Wrong:
+				Inception blocks usually use 1x1 convolutions to reduce the input data volume’s size before applying 3x3 and 5x5 convolutions.
+				- Making an inception network deeper (by stacking more inception blocks together) should not hurt training set performance.
+				A single inception block allows the network to use a combination of 1x1, 3x3, 5x5 convolutions and pooling.
+			10. Parameters trained for one computer vision task are often useful as pretraining for other computer vision tasks.
+				It is a convenient way to get working an implementation of a complex ConvNet architecture.
+				
