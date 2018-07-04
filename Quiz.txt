@@ -226,3 +226,33 @@ Coursera: DL Specialization
 			10. Parameters trained for one computer vision task are often useful as pretraining for other computer vision tasks.
 				It is a convenient way to get working an implementation of a complex ConvNet architecture.
 				
+		Week: 3
+			Quiz: 1 - Detection algorithms
+			1. Wrong: y=[1,0.3,0.7,0.5,0.5,0,1,0]
+			2. y=[0,?,?,?,?,?,?,?]
+			3. Logistic unit, b_x and b_y
+			4. 2N
+			5. False
+			6. False
+			7. True
+			8. 1/9
+			9. Wrong: 4: Tree - 1; Car - 2; Motorcycle - 1; Pedestrian - 1
+			10. 19x19x(5x25)
+			
+		Week: 4
+			Quiz: 1 - Special applications: Face recognition & Neural style transfer
+			1. True
+			2. Wrong:
+				This allows us to learn to predict a person’s identity using a softmax output unit, where the number of classes equals the number of persons in the database plus 1 (for the final “not in database” class).
+				This allows us to learn to recognize a new person given just a single image of that person.
+				We need to solve a one-shot learning problem.
+			3. False
+			4. max(∣∣f(A)−f(P)∣∣ ** 2 − ∣∣f(A)−f(N)∣∣ ** 2 +α,0)
+			5. True
+			6. True
+			7. False
+			8. True
+			9. The pixel values of the generated image G
+			10. Wrong: Undefined: This convolution step is impossible and cannot be performed because the dimensions specified don’t match up.
+​	
+				
