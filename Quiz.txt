@@ -254,5 +254,89 @@ Coursera: DL Specialization
 			8. True
 			9. The pixel values of the generated image G
 			10. Wrong: Undefined: This convolution step is impossible and cannot be performed because the dimensions specified don’t match up.
+			
+	Course: 5-RNN
+		Week: 1
+			1. x(i)<j>
+			2. Tx=Ty
+			3. Sentiment classification (input a piece of text and output a 0/1 to denote positive or negative sentiment)
+				Gender recognition from speech (input an audio clip and output a label indicating the speaker’s gender)
+			4. Estimating P(y^<t> | y^<1>, y^<2>, …, y^<t-1>)
+			5. (i) Use the probabilities output by the RNN to randomly sample a chosen word for that time-step as \hat{y}^{<t>} 
+y
+^
+​	  
+<t>
+ . (ii) Then pass this selected word to the next time-step.
+ 			6. Exploding gradient problem.
+ 			7. 100
+ 			8. Betty’s model (removing \Gamma_rΓ 
+r
+​	 ), because if \Gamma_u \approx 0Γ 
+u
+​	 ≈0 for a timestep, the gradient can propagate back through that timestep without much decay.
+			9. Γ 
+u
+​	  and 1-\Gamma_u1−Γ 
+u
+​			10. Unidirectional RNN, because the value of y^{<t>}y 
+<t>
+  depends only on x^{<1>}, …, x^{<t>}x 
+<1>
+ ,…,x 
+<t>
+ , but not on x^{<t+1>}, …, x^{<365>}x 
+<t+1>
+ ,…,x 
+<365>
+
+		Week: 2 - NLP
+		1. False
+		2. A non-linear dimensionality reduction technique
+		3. True
+		4. boy - girl ~ brother - sister
+			boy - brother ~ girl - sister
+		5. It is computationally wasteful.
+		6. True
+		7. c and tt are chosen to be nearby words.
+		8. θt and e_c are both 
+			- 500 dimensional vectors.
+			- trained with an optimization algorithm such as Adam or gradient descent.
+			Wrong: After training, we should expect θt to be very close to e_c when t and c are the same word.	
+		9. theta_i and e_j should be initialized randomly at the beginning of training.
+			X 
+ij
+​	  is the number of times word i appears in the context of word j.
+			The weighting function f(.)f(.) must satisfy f(0) = 0f(0)=0.
+		10. m 
+1
+​	  >> m_2m 
+2
+
+		Week: 3 - Sequence Models
+		1. False
+		2. Beam search will run more slowly.
+			Beam search will use up more memory.
+			Beam search will generally find better solutions (i.e. do a better job maximizing P(y \mid x)P(y∣x))
+		3. True
+		4. No, because P(y^* \mid x) \leq P(\hat{y} \mid x)P(y 
+∗
+ ∣x)≤P( 
+y
+^
+​	 ∣x) indicates the error should be attributed to the RNN rather than to the search algorithm.
+		5. True
+		6. We expect α<t,t′> to be generally larger for values of a<t′> that are highly relevant to the value the network should output for y^{<t>}y 
+<t>
+ . (Note the indices in the superscripts.)
+ 			∑t′α<t,t′>=1 (Note the summation is over t′.)
+ 		7. True
+ 		8. The input sequence length T_xT 
+x
+​	  is large.
+		9. cookbook
+		10. Features of the audio (such as spectrogram features) at time tt.
+​	
+​	
 ​	
 				
